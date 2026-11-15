@@ -23,7 +23,6 @@ using static Payonel.LungoLua.Bytes.InternalString;
 using static Payonel.LungoLua.Platform.LocaleUtil;
 using static Payonel.LungoLua.Platform.OsApi;
 using static Payonel.LungoLua.Runtime.Lstate;
-using static Payonel.LungoLua.Runtime.Lstate;
 
 namespace Payonel.LungoLua.Lib;
 

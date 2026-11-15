@@ -519,7 +519,7 @@ public sealed class Llex
     catch (Exception e)
     {
       luaZ_record(ls.z.rz, LF_INCLINE, l);
-      throw e;
+      throw;
     }
     if (++ls.linenumber >= JInteger.MAX_VALUE)
       lexerror(ls, Lt.chunk_has_too_many_lines, 0);
@@ -676,7 +676,7 @@ public sealed class Llex
     catch (Exception e)
     {
       luaZ_record(ls.z.rz, LF_NUMERAL, l);
-      throw e;
+      throw;
     }
   }
 
@@ -725,7 +725,7 @@ public sealed class Llex
     catch (Exception e)
     {
       luaZ_record(ls.z.rz, LF_SKIPSEP, l);
-      throw e;
+      throw;
     }
   }
 
@@ -808,7 +808,7 @@ public sealed class Llex
     catch (Exception e)
     {
       luaZ_record(ls.z.rz, LF_LONGSTRING, l);
-      throw e;
+      throw;
     }
   }
 
@@ -838,7 +838,7 @@ public sealed class Llex
     catch (Exception e)
     {
       luaZ_record(ls.z.rz, LF_ESCCHECK, l);
-      throw e;
+      throw;
     }
     lexerror(ls, msg, TK_STRING);
   }
@@ -868,7 +868,7 @@ public sealed class Llex
     catch (Exception e)
     {
       luaZ_record(ls.z.rz, LF_GETHEXA, l);
-      throw e;
+      throw;
     }
     return luaO_hexavalue(ls.current);
   }
@@ -895,7 +895,7 @@ public sealed class Llex
     catch (Exception e)
     {
       luaZ_record(ls.z.rz, LF_HEXAESC, l);
-      throw e;
+      throw;
     }
     ls.buff.drop(2); /* remove saved chars from buffer */
     return l.r;
@@ -962,7 +962,7 @@ public sealed class Llex
     catch (Exception e)
     {
       luaZ_record(ls.z.rz, LF_UTF8ESC, l);
-      throw e;
+      throw;
     }
   }
 
@@ -987,7 +987,7 @@ public sealed class Llex
     catch (Exception e)
     {
       luaZ_record(ls.z.rz, LF_UTF8, l);
-      throw e;
+      throw;
     }
     int n = luaO_utf8esc(buff.span(), c);
     for (; n > 0; n--) /* add 'buff' to string */
@@ -1032,7 +1032,7 @@ public sealed class Llex
     catch (Exception e)
     {
       luaZ_record(ls.z.rz, LF_DECESC, l);
-      throw e;
+      throw;
     }
   }
 
@@ -1193,7 +1193,7 @@ public sealed class Llex
     catch (Exception e)
     {
       luaZ_record(ls.z.rz, LF_STRING, l);
-      throw e;
+      throw;
     }
   }
 
@@ -1471,7 +1471,7 @@ public sealed class Llex
     catch (Exception e)
     {
       luaZ_record(rz, LF_LLEX, l);
-      throw e;
+      throw;
     }
   }
 
@@ -1503,7 +1503,7 @@ public sealed class Llex
     catch (Exception e)
     {
       luaZ_record(ls.z.rz, LF_NEXT, l);
-      throw e;
+      throw;
     }
   }
 

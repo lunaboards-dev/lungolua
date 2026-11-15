@@ -68,7 +68,7 @@ public sealed class Lzio
       catch (Exception e)
       {
         luaZ_record(z.rz, LF_FILL, l);
-        throw e;
+        throw;
       }
       lua_lock(L);
     }
@@ -173,7 +173,7 @@ public sealed class Lzio
     catch (Exception e)
     {
       luaZ_record(z.rz, LF_ZREAD, l);
-      throw e;
+      throw;
     }
   }
 

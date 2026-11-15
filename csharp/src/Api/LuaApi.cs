@@ -2579,7 +2579,7 @@ public sealed class LuaApi
     catch (Exception e)
     {
       obj.freed(L);
-      throw e;
+      throw;
     }
     u.objsize = size;
     u.obj = obj;

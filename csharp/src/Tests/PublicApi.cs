@@ -28,7 +28,6 @@ using static Payonel.LungoLua.Api.LuaConf;
 using static Payonel.LungoLua.Lib.Lcorolib;
 using static Payonel.LungoLua.Lib.Ldblib;
 using static Payonel.LungoLua.Lib.Linit;
-using static Payonel.LungoLua.Lib.Linit;
 using static Payonel.LungoLua.Lib.Lmathlib;
 using static Payonel.LungoLua.Lib.Lstrlib;
 using static Payonel.LungoLua.Lib.Lualib;

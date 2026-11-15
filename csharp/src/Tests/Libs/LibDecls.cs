@@ -3,7 +3,6 @@ using Payonel.LungoLua.Compat;
 using ByteView = Payonel.LungoLua.Bytes.ByteView;
 using lua_State = Payonel.LungoLua.Runtime.lua_State;
 using static Payonel.LungoLua.Platform.OsApi;
-using static Payonel.LungoLua.Platform.OsApi;
 
 namespace Payonel.LungoLua.Tests.Libs;
 

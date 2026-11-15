@@ -1067,7 +1067,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_STATLIST, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -1102,7 +1102,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_FIELDSEL, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -1133,7 +1133,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_YINDEX, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -1228,7 +1228,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_RECFIELD, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -1315,7 +1315,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_FIELD, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -1436,7 +1436,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_CONSTRUCTOR, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -1550,7 +1550,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_PARLIST, l);
-      throw ex;
+      throw;
     }
     adjustlocalvars(ls, l.nparams);
     f.numparams = fs.nactvar;
@@ -1642,7 +1642,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_BODY, l);
-      throw ex;
+      throw;
     }
     codeclosure(ls, e);
     close_func(ls);
@@ -1710,7 +1710,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_EXPLIST, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -1805,7 +1805,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_FUNCARGS, l);
-      throw ex;
+      throw;
     }
     { if (JAssert.on && !( f.k == VNONRELOC)) throw new AssertionError(); }
     @base = f.info; /* base register for call */
@@ -1903,7 +1903,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_PRIMARYEXP, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -2001,7 +2001,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_SUFFIXEDEXP, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -2095,7 +2095,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_SIMPLEEXP, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -2311,7 +2311,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_SUBEXPR, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -2383,7 +2383,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_BLOCK, l);
-      throw ex;
+      throw;
     }
     leaveblock(fs);
   }
@@ -2546,7 +2546,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_RESTASSIGN, l);
-      throw ex;
+      throw;
     }
     storevartop(ls.fs, lh.v); /* default assignment */
   }
@@ -2597,7 +2597,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_COND, l);
-      throw ex;
+      throw;
     }
     if (l.v.k == VNIL)
       l.v.k = VFALSE; /* 'falses' are all equal here */
@@ -2647,7 +2647,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_BREAKSTAT, l);
-      throw ex;
+      throw;
     }
     newgotoentry(ls, ls.brkn, line);
   }
@@ -2696,7 +2696,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_LABELSTAT, l);
-      throw ex;
+      throw;
     }
     checkrepeated(ls, name); /* check for repeated labels */
     createlabel(ls, name, line, block_follow(ls, false));
@@ -2775,7 +2775,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_WHILESTAT, l);
-      throw ex;
+      throw;
     }
     leaveblock(fs);
     luaK_patchtohere(fs, l.condexit); /* false conditions finish the loop */
@@ -2852,7 +2852,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_REPEATSTAT, l);
-      throw ex;
+      throw;
     }
     if (l.bl2.upval)
     {                                   /* upvalues? */
@@ -2891,7 +2891,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_EXP1, l);
-      throw ex;
+      throw;
     }
     luaK_exp2nextreg(ls.fs, l.v);
     { if (JAssert.on && !( l.v.k == VNONRELOC)) throw new AssertionError(); }
@@ -2983,7 +2983,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_FORBODY, l);
-      throw ex;
+      throw;
     }
     leaveblock(fs); /* end of scope for declared variables */
     fixforjump(fs, l.prep, luaK_getlabel(fs), false);
@@ -3080,7 +3080,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_FORNUM, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -3177,7 +3177,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_FORLIST, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -3266,7 +3266,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_FORSTAT, l);
-      throw ex;
+      throw;
     }
     leaveblock(fs); /* loop scope ('break' jumps to this point) */
   }
@@ -3327,7 +3327,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_TESTTHEN, l);
-      throw ex;
+      throw;
     }
     if (ls.t.token == TK_ELSE ||
         ls.t.token == TK_ELSEIF)                                /* followed by 'else'/'elseif'? */
@@ -3410,7 +3410,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_IFSTAT, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -3473,7 +3473,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_LOCALFUNC, l);
-      throw ex;
+      throw;
     }
     /* debug information will only see the variable after this point! */
     localdebuginfo(fs, l.fvar).startpc = fs.pc;
@@ -3532,7 +3532,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_VARATTRIB, l);
-      throw ex;
+      throw;
     }
     ByteView attr = l.ts.data.view();
     if (attr.equals(Lt.const_kw))
@@ -3656,7 +3656,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_LOCALSTAT, l);
-      throw ex;
+      throw;
     }
     var = getlocalvardesc(fs, l.vidx); /* retrieve last variable */
     if (l.nvars == l.nexps &&          /* no adjustments? */
@@ -3782,7 +3782,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_INITGLOBAL, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -3868,7 +3868,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_GLOBALNAMES, l);
-      throw ex;
+      throw;
     }
     fs.nactvar = (short) (fs.nactvar + l.nvars); /* activate declaration */
   }
@@ -3933,7 +3933,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_GLOBALSTAT, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -3996,7 +3996,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_GLOBALFUNC, l);
-      throw ex;
+      throw;
     }
     checkglobal(ls, l.fname, line);
     luaK_storevar(fs, l.var, l.b);
@@ -4035,7 +4035,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_GLOBALSTATFUNC, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -4107,7 +4107,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_FUNCNAME, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -4167,7 +4167,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_FUNCSTAT, l);
-      throw ex;
+      throw;
     }
     luaK_storevar(ls.fs, l.v, l.b);
     luaK_fixline(ls.fs, line); /* definition "happens" in the first line */
@@ -4233,7 +4233,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_EXPRSTAT, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -4326,7 +4326,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_RETSTAT, l);
-      throw ex;
+      throw;
     }
   }
 
@@ -4515,7 +4515,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_STATEMENT, l);
-      throw ex;
+      throw;
     }
     { if (JAssert.on && !( ls.fs.f.maxstacksize >= ls.fs.freereg &&
            ls.fs.freereg >= luaY_nvarstack(ls.fs))) throw new AssertionError(); }
@@ -4572,7 +4572,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(ls.z.rz, LF_MAINFUNC, l);
-      throw ex;
+      throw;
     }
     check(ls, TK_EOS);
     close_func(ls);
@@ -4650,7 +4650,7 @@ public sealed class Lparser
     catch (Exception ex)
     {
       luaZ_record(z.rz, LF_PARSER, l);
-      throw ex;
+      throw;
     }
     { if (JAssert.on && !( l.funcstate.prev == null && l.funcstate.nups == 1 && l.lexstate.fs == null)) throw new AssertionError(); }
     /* all scopes should be correctly finished */

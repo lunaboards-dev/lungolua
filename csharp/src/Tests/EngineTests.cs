@@ -31,7 +31,6 @@ using static Payonel.LungoLua.Object.Lnames;
 using static Payonel.LungoLua.Object.Lobject;
 using static Payonel.LungoLua.Object.Ltable;
 using static Payonel.LungoLua.Platform.OsApi;
-using static Payonel.LungoLua.Platform.OsApi;
 using static Payonel.LungoLua.Runtime.Lhack;
 using static Payonel.LungoLua.Runtime.Lstate;
 

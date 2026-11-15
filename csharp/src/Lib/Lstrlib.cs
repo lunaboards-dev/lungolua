@@ -974,7 +974,7 @@ public sealed class Lstrlib
       catch (Exception e)
       {
         record(ms, MF_MAX, s, ep, i);
-        throw e;
+        throw;
       }
       if (res != NOMATCH)
         return res;
@@ -1006,7 +1006,7 @@ public sealed class Lstrlib
       catch (Exception e)
       {
         record(ms, MF_MIN, s, p, ep);
-        throw e;
+        throw;
       }
       if (res != NOMATCH)
         return res;
@@ -1034,7 +1034,7 @@ public sealed class Lstrlib
     catch (Exception e)
     {
       record(ms, MF_START, 0, 0, 0);
-      throw e;
+      throw;
     }
     if (res == NOMATCH) /* match failed? */
       ms.level--;       /* undo capture */
@@ -1054,7 +1054,7 @@ public sealed class Lstrlib
     catch (Exception e)
     {
       record(ms, MF_END, l, 0, 0);
-      throw e;
+      throw;
     }
     if (res == NOMATCH)                    /* match failed? */
       ms.capture[l].len = CAP_UNFINISHED; /* undo capture */
@@ -1170,7 +1170,7 @@ public sealed class Lstrlib
             catch (Exception e)
             {
               record(ms, MF_OPT, s, ep, 0);
-              throw e;
+              throw;
             }
             if (res != NOMATCH)
               s = res;
@@ -1245,7 +1245,7 @@ public sealed class Lstrlib
     catch (Exception e)
     {
       record(ms, kind, a, b, c);
-      throw e;
+      throw;
     }
     switch (kind)
     {
@@ -2488,7 +2488,8 @@ public sealed class Lstrlib
     ByteOwner body = new ByteOwner(MAX_ITEM);
     int blen = 0;
     if (u == 0 && spec.precision == 0)
-      ;
+    {
+    }
     else
     {
       int mindigits = (spec.precision >= 0) ? spec.precision : 1;

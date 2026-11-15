@@ -11,6 +11,11 @@
     <!-- a method that hides an inherited one would change behavior silently (Java overrides) -->
     <WarningsAsErrors>CS0108;CS0114</WarningsAsErrors>
     <NoWarn>CS0162;CS0164;CS0168;CS0219;CS0649;CS0169;CS0414;CS8321;CS1717;CS0659;CS0661;CS0660</NoWarn>
+    <!-- the C++'s own idioms, kept as transcribed: bitwise-or of a sign-extended
+         byte whose high bits the cast or mask drops (CS0675), the NaN test
+         'n != n' (CS1718), size checks that cannot fail for an int (CS0652),
+         the C names of types (expdesc, CS8981) -->
+    <NoWarn>$(NoWarn);CS0675;CS1718;CS0652;CS8981</NoWarn>
     <InvariantGlobalization>true</InvariantGlobalization>
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>

@@ -36,10 +36,7 @@ using static Payonel.LungoLua.Api.LuaAuxLib;
 using static Payonel.LungoLua.Bytes.InternalString;
 using static Payonel.LungoLua.Bytes.Lctype;
 using static Payonel.LungoLua.Bytes.UtilCast;
-using static Payonel.LungoLua.Bytes.UtilCast;
-using static Payonel.LungoLua.Bytes.UtilCast;
 using static Payonel.LungoLua.Gc.Lgc;
-using static Payonel.LungoLua.Lib.Linit;
 using static Payonel.LungoLua.Lib.Linit;
 using static Payonel.LungoLua.Object.Lfunc;
 using static Payonel.LungoLua.Object.Llimits;
@@ -1715,7 +1712,7 @@ public sealed class Ltests
     catch (jmp_buf e)
     { /* error handling */
       if (e != b.jb)
-        throw e;
+        throw;
       /* move error message to original state */
       lua_pushstring(L, lua_tostring(L1, -1));
     }

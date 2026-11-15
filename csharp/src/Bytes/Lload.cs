@@ -785,7 +785,7 @@ public sealed class Lload
     {
       while (i-- > 0)
         luaM_freeblock(L, b[i]);
-      throw e;
+      throw;
     }
     dyd.copyfrom(box.dyd);
     box.dyd.copyfrom(new Dyndata());

@@ -446,7 +446,7 @@ public sealed class Lundump
     catch (Exception e)
     {
       luaZ_record(S.Z.rz, LF_LOADVARINT, l);
-      throw e;
+      throw;
     }
   }
 
@@ -481,7 +481,7 @@ public sealed class Lundump
     catch (Exception e)
     {
       luaZ_record(S.Z.rz, LF_LOADNUMBER, l);
-      throw e;
+      throw;
     }
     return l.x.view().toDouble(0);
   }
@@ -569,7 +569,7 @@ public sealed class Lundump
     catch (Exception e)
     {
       luaZ_record(S.Z.rz, LF_LOADSTRING, l);
-      throw e;
+      throw;
     }
     /* add string to list of saved strings */
     S.nstr++;
@@ -610,7 +610,7 @@ public sealed class Lundump
     catch (Exception e)
     {
       luaZ_record(S.Z.rz, LF_LOADCODE, l);
-      throw e;
+      throw;
     }
   }
 
@@ -705,7 +705,7 @@ public sealed class Lundump
     catch (Exception e)
     {
       luaZ_record(S.Z.rz, LF_LOADCONSTANTS, l);
-      throw e;
+      throw;
     }
   }
 
@@ -746,7 +746,7 @@ public sealed class Lundump
     catch (Exception e)
     {
       luaZ_record(S.Z.rz, LF_LOADPROTOS, l);
-      throw e;
+      throw;
     }
   }
 
@@ -797,7 +797,7 @@ public sealed class Lundump
     catch (Exception e)
     {
       luaZ_record(S.Z.rz, LF_LOADUPVALUES, l);
-      throw e;
+      throw;
     }
   }
 
@@ -908,7 +908,7 @@ public sealed class Lundump
     catch (Exception e)
     {
       luaZ_record(S.Z.rz, LF_LOADDEBUG, l);
-      throw e;
+      throw;
     }
   }
 
@@ -974,7 +974,7 @@ public sealed class Lundump
     catch (Exception e)
     {
       luaZ_record(S.Z.rz, LF_LOADFUNCTION, l);
-      throw e;
+      throw;
     }
   }
 
@@ -998,7 +998,7 @@ public sealed class Lundump
     catch (Exception e)
     {
       luaZ_record(S.Z.rz, LF_CHECKLITERAL, l);
-      throw e;
+      throw;
     }
     if (!s.equals(l.buff.view().substr(0, len)))
       error(S, msg);
@@ -1049,7 +1049,7 @@ public sealed class Lundump
     catch (Exception e)
     {
       luaZ_record(S.Z.rz, LF_CHECKNUM, l);
-      throw e;
+      throw;
     }
     int i = l.raw.view().toInt32(0);
     checknumformat(S, i == v, tname);
@@ -1077,7 +1077,7 @@ public sealed class Lundump
     catch (Exception e)
     {
       luaZ_record(S.Z.rz, LF_CHECKNUM, l);
-      throw e;
+      throw;
     }
     long i = l.raw.view().toInt64(0);
     checknumformat(S, i == v, tname);
@@ -1105,7 +1105,7 @@ public sealed class Lundump
     catch (Exception e)
     {
       luaZ_record(S.Z.rz, LF_CHECKNUM, l);
-      throw e;
+      throw;
     }
     double i = l.raw.view().toDouble(0);
     checknumformat(S, i == v, tname);
@@ -1155,7 +1155,7 @@ public sealed class Lundump
     catch (Exception e)
     {
       luaZ_record(S.Z.rz, LF_CHECKHEADER, l);
-      throw e;
+      throw;
     }
   }
 
@@ -1223,7 +1223,7 @@ public sealed class Lundump
     catch (Exception e)
     {
       luaZ_record(Z.rz, LF_UNDUMP, l);
-      throw e;
+      throw;
     }
     if (l.cl.upvals.Length != l.cl.p.upvalues.Length)
       error(S, Lt.corrupted_chunk);

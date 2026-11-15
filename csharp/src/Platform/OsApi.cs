@@ -1525,7 +1525,8 @@ public sealed class OsApi
         o.Mode = FileMode.CreateNew;
         o.Access = FileAccess.Write;
         o.Share = FileShare.ReadWrite | FileShare.Delete;
-        o.UnixCreateMode = UnixFileMode.UserRead | UnixFileMode.UserWrite;
+        if (!OperatingSystem.IsWindows())
+          o.UnixCreateMode = UnixFileMode.UserRead | UnixFileMode.UserWrite;
         new FileStream(p, o).Dispose();
         return p;
       }
@@ -1563,8 +1564,8 @@ public sealed class OsApi
   {
     try
     {
-      return File.Exists(SHELL) && (File.GetUnixFileMode(SHELL)
-          & (UnixFileMode.UserExecute | UnixFileMode.GroupExecute | UnixFileMode.OtherExecute)) != 0;
+      return File.Exists(SHELL) && (OperatingSystem.IsWindows() || (File.GetUnixFileMode(SHELL)
+          & (UnixFileMode.UserExecute | UnixFileMode.GroupExecute | UnixFileMode.OtherExecute)) != 0);
     }
     catch (Exception e) when (isioerror(e))
     {

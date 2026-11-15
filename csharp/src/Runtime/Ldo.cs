@@ -109,15 +109,15 @@ public sealed class Ldo
       if (e.status == LUA_CBEXIT)
       { /* only the call of the callback catches its exit */
         if (!c.exitpoint)
-          throw e;
+          throw;
       }
       else if (e.level != c.level) /* not the correct level? */
-        throw e;     /* rethrow to upper level */
+        throw;     /* rethrow to upper level */
       c.status = e.status;
     }
     catch (AssertionError e)
     {
-      throw e;
+      throw;
     }
     catch (OutOfMemoryException e)
     {
@@ -502,7 +502,7 @@ public sealed class Ldo
     {
       if (e.status != LUA_FREEZE)
         ci.callstatus &= ~CIST_ERRH;
-      throw e;
+      throw;
     }
     ci.callstatus &= ~CIST_ERRH;
   }
@@ -2450,7 +2450,7 @@ public sealed class Ldo
     catch (Exception e)
     {
       luaZ_record(rz, LF_FPARSER, l);
-      throw e;
+      throw;
     }
     L.top = l.otop; /* restore stack */
     setslotclL(L, L.top++, cl); /* push closure */

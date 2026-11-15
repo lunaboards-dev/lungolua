@@ -1208,7 +1208,7 @@ public sealed class LuaAuxLib
       catch (Exception e)
       {
         os_fclose(lf.f);
-        throw e;
+        throw;
       }
       if (boxed)
       {

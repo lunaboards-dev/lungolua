@@ -8,7 +8,6 @@ using static Payonel.LungoLua.Object.Llimits;
 using static Payonel.LungoLua.Object.Lobject;
 using static Payonel.LungoLua.Object.Lstring;
 using static Payonel.LungoLua.Platform.Libm;
-using static Payonel.LungoLua.Platform.Libm;
 using static Payonel.LungoLua.Runtime.Ltm;
 
 namespace Payonel.LungoLua.Object;
